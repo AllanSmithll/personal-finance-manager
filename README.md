@@ -30,11 +30,10 @@ To use the Personal Finance Manager, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Make sure you have Python 3 installed.
-3. Install the required dependencies by running the following command:
+3. Run the main.py file to start the application:
 
-`pip install -r requirements.txt`
+`python main.py` or `python3 main.py`
 
-4. Run the main.py file to start the application:
 5. Follow the on-screen instructions to navigate and use the Personal Finance Manager.
 
 ## Usage
