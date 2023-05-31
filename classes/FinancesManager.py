@@ -15,25 +15,25 @@ class FinancesManager:
         try:
             if not os.path.exists("data"): os.makedirs("data")
             
-            if not os.path.exists("data/revenues.txt"):
-                with open("data/revenues.txt", "w") as file:
+            if not os.path.exists("data/planned_revenues.csv"):
+                with open("data/planned_revenues.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/expenses.txt"):
-                with open("data/expenses.txt", "w") as file:
+            if not os.path.exists("data/planned_expenses.csv"):
+                with open("data/planned_expenses.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/saved_money.txt"):
-                with open("data/saved_money.txt", "w") as file:
+            if not os.path.exists("data/saved_money.csv"):
+                with open("data/saved_money.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/historic.txt"):
-                with open("data/historic.txt", "w") as file:
+            if not os.path.exists("data/historic.csv"):
+                with open("data/historic.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/debtors.txt"):
-                with open("data/debtors.txt", "w") as file:
+            if not os.path.exists("data/debtors-debts.csv"):
+                with open("data/debtors-debts.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/summation.txt"):
-                with open("data/summation.txt", "w") as file:
+            if not os.path.exists("data/summation.csv"):
+                with open("data/summation.csv", "w") as file:
                     file.write("")
-                    
+
             self.__FILE_PLANNED_REVENUES = open("./data/planned_revenues.csv", "r")
             self.__FILE_PLANNED_EXPENSES = open("./data/planned_expenses.csv", "r")
             self.__FILE_HISTORIC = open("./data/historic.csv", "r")
