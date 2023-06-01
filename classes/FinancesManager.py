@@ -234,8 +234,9 @@ class FinancesManager:
                 line_amount = float(line_data[1])
 
                 if line_description == description:
-                    if line_amount == 0:
-                        updated_line = f"{line_description};{new_amount};check\n"
+                    if file_path == "./data/planned_expenses.csv" or file_path == "./data/debtors-debts.csv":
+                        if line_amount > 0 and new_amount == 0:
+                            updated_line = f"{line_description};{new_amount};check\n"
                     else:
                         updated_line = f"{line_description};{new_amount}\n"
                 else:
