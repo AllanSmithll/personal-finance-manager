@@ -265,9 +265,9 @@ class FinancesManager:
         total_saved_money = sum_values_in_file("./data/saved_money.csv")
         total_debtors_debts = sum_values_in_file("./data/debtors-debts.csv")
         total_planned_expenses = sum_values_in_file("./data/planned_expenses.csv")
-        total_expenses = total_planned_expenses
+        total_expenses = 722.00
 
-        summation_content = f"Total: {total_saved_money:.2f}\nDevedores: {total_debtors_debts:.2f}\nPara gastar: {total_saved_money - total_saved_money_not_expense:.2f}\nTotal em maos - reserva: {total_saved_money - total_saved_money_for_reserve:.2f}\nTotal em despesas: {total_expenses:.2f}"
+        summation_content = f"Total: {total_saved_money:.2f}\nDevedores: {total_debtors_debts:.2f}\nPara gastar: {total_saved_money - total_saved_money_not_expense:.2f}\nTotal em maos - reserva: {total_saved_money - total_saved_money_for_reserve:.2f}\nTotal em despesas: {total_expenses:.2f}\nQuanto falta em despesas: {total_planned_expenses:.2f}"
 
         with open("./data/summation.csv", "w") as file:
             file.write(summation_content)
