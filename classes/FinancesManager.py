@@ -30,8 +30,8 @@ class FinancesManager:
             if not os.path.exists("data/debtors-debts.csv"):
                 with open("data/debtors-debts.csv", "w") as file:
                     file.write("")
-            if not os.path.exists("data/summation.csv"):
-                with open("data/summation.csv", "w") as file:
+            if not os.path.exists("data/summation.txt"):
+                with open("data/summation.txt", "w") as file:
                     file.write("")
 
             self.__FILE_PLANNED_REVENUES = open("./data/planned_revenues.csv", "r")
@@ -39,7 +39,7 @@ class FinancesManager:
             self.__FILE_HISTORIC = open("./data/historic.csv", "r")
             self.__FILE_SAVED_MONEY = open("./data/saved_money.csv", "r")
             self.__FILE_DEBTORS_DEBTS = open("./data/debtors-debts.csv", "r")
-            self.__FILE_SUMMATION = open("./data/summation.csv", "r")
+            self.__FILE_SUMMATION = open("./data/summation.txt", "r")
             self.__total_expenses = 727.00
             self.__total_revenues = 650.00
         except FileNotFoundError:
@@ -271,7 +271,7 @@ class FinancesManager:
 
         summation_content = f"Total: {total_saved_money:.2f}\nTotal em receitas: {self.__total_revenues:.2f}\nDevedores: {total_debtors_debts:.2f}\nPara gastar: {total_saved_money - total_saved_money_not_expense:.2f}\nTotal em maos - reserva: {total_saved_money - total_saved_money_for_reserve:.2f}\nTotal em despesas: {self.__total_expenses:.2f}\nQuanto falta em despesas: {total_planned_expenses:.2f}"
 
-        with open("./data/summation.csv", "w") as file:
+        with open("./data/summation.txt", "w") as file:
             file.write(summation_content)
     
     def close_files(self):
