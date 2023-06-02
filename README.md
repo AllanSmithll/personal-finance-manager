@@ -58,7 +58,7 @@ The project has the following file structure:
 - ┃ ┣ 📜planned_expenses.csv
 - ┃ ┣ 📜planned_revenues.csv
 - ┃ ┣ 📜saved_money.csv
-- ┃ ┗ 📜summation.csv
+- ┃ ┗ 📜summation.txt
 - ┣ 📜.gitignore
 - ┗ 📜main.py
 
