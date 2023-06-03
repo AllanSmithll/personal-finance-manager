@@ -57,9 +57,9 @@ class FinancesManager:
         except IOError:
             raise FinancesManagerException("Erro ao adicionar receita planejada. Verifique o arquivo ou permissões de leitura/escrita.")
 
-    def addPlannedExpense(self, description: str, amount: float, ok: any) -> None:
+    def addPlannedExpense(self, description: str, amount: float) -> None:
         try:
-            planned_expense = f"{description};{str(amount)};{str(ok)}"
+            planned_expense = f"{description};{str(amount)};"
             file_path = "./data/planned_expenses.csv"
             if has_line(file_path):
                 planned_expense = "\n" + planned_expense
@@ -77,7 +77,7 @@ class FinancesManager:
                 money = "\n" + money
             with open(file_path, "a") as file:
                 file.write(money + "\n")
-            self.addHistoric("Dinheiro guardado adicionado: "+description, amount)
+            self.addHistoric("Dinheiro  adicionado: "+description, amount)
         except IOError:
             raise FinancesManagerException("Erro ao adicionar dinheiro guardado. Verifique o arquivo ou permissões de leitura/escrita.")
     
@@ -92,8 +92,7 @@ class FinancesManager:
             self.addHistoric("Adição de devedor ou dívida: " + name, amount)
         except IOError:
             raise FinancesManagerException("Erro ao adicionar devedor ou dívida. Verifique o arquivo ou permissões de leitura/escrita.")
-
-
+        
     def removeSavedMoney(self, description: str, amount: float) -> None:
         try:
             money = f"{description};{str(amount)}"
