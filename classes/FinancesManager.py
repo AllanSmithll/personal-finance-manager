@@ -237,9 +237,9 @@ class FinancesManager:
                 if line_description == description:
                     if file_path == "./data/planned_expenses.csv" or file_path == "./data/debtors-debts.csv":
                         if line_amount > 0 and new_amount == 0:
-                            updated_line = f"{line_description};{new_amount};check\n"
+                            updated_line = f"{line_description};{new_amount:.2f};check\n"
                     else:
-                        updated_line = f"{line_description};{new_amount}\n"
+                        updated_line = f"{line_description};{new_amount:.2f}\n"
                 else:
                     updated_line = line
                 updated_lines.append(updated_line)
