@@ -84,7 +84,7 @@ class FinancesManager:
     def addDebtorDebt(self, name: str, amount: float) -> None:
         try:
             debt = f"{name};{str(amount)}"
-            file_path = "./data/debtors_debts.csv"
+            file_path = "./data/debtors-debts.csv"
             if has_line(file_path):
                 debt = "\n" + debt
             with open(file_path, "a") as file:
