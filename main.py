@@ -49,8 +49,7 @@ def main():
             elif choice == "5":
                 description = input("Digite a descrição da despesa planejada: ")
                 amount = float(input("Digite o valor da despesa planejada: "))
-                ok = input("Aprovada? (Sim/Não): ")
-                finance_manager.addPlannedExpense(description, amount, ok)
+                finance_manager.addPlannedExpense(description, amount)
                 print("Nova despesa planejada adicionada!")
                 print()
             elif choice == "6":
