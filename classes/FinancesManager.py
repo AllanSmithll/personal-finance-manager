@@ -40,7 +40,7 @@ class FinancesManager:
             self.__FILE_SAVED_MONEY = open("./data/saved_money.csv", "r")
             self.__FILE_DEBTORS_DEBTS = open("./data/debtors-debts.csv", "r")
             self.__FILE_SUMMATION = open("./data/summation.txt", "r")
-            self.__total_expenses = 727.00
+            self.__total_expenses = 688.94
             self.__total_revenues = 650.00
         except FileNotFoundError:
             raise FinancesManagerException("Error: arquivo não encontrado!")
@@ -259,15 +259,15 @@ class FinancesManager:
             raise FinancesManagerException("Erro ao atualizar os arquivos. Verifique os arquivos ou permissões de leitura/escrita.")
 
     def updateSummationFile(self):
-        accountsImportants = ["Reserva de Emergencia", "Nubank"]
-        reserve = ["Reserva de Emergencia"]
+        accountsImportants = ["Reserva de Emergencia", "Nubank", "Inter"]
+        reserve = ["Reserva de Emergencia","Inter"]
         total_saved_money_not_expense = sum_values_in_file("./data/saved_money.csv", accountsImportants)
         total_saved_money_for_reserve = sum_values_in_file("./data/saved_money.csv", reserve)
         total_saved_money = sum_values_in_file("./data/saved_money.csv")
         total_debtors_debts = sum_values_in_file("./data/debtors-debts.csv")
         total_planned_expenses = sum_values_in_file("./data/planned_expenses.csv")
 
-        summation_content = f"Total: {total_saved_money:.2f}\nTotal em receitas: {self.__total_revenues:.2f}\nDevedores: {total_debtors_debts:.2f}\nPara gastar: {total_saved_money - total_saved_money_not_expense:.2f}\nTotal em maos - reserva: {total_saved_money - total_saved_money_for_reserve:.2f}\nTotal em despesas: {self.__total_expenses:.2f}\nQuanto falta em despesas: {total_planned_expenses:.2f}"
+        summation_content = f"Total: {total_saved_money:.2f}\nTotal em receitas: {self.__total_revenues:.2f}\nReserva de Emergencia: {total_saved_money_for_reserve}\nDevedores: {total_debtors_debts:.2f}\nPara gastar: {total_saved_money - total_saved_money_not_expense:.2f}\nTotal em maos - reserva: {total_saved_money - total_saved_money_for_reserve:.2f}\nTotal em despesas no mes: {self.__total_expenses:.2f}\nQuanto falta em despesas: {total_planned_expenses:.2f}"
 
         with open("./data/summation.txt", "w") as file:
             file.write(summation_content)
