@@ -41,7 +41,7 @@ class FinancesManager:
             self.__FILE_DEBTORS_DEBTS = open("./data/debtors-debts.csv", "r")
             self.__FILE_SUMMATION = open("./data/summation.txt", "r")
             self.__total_expenses = 688.94
-            self.__total_revenues = 650.00
+            self.__total_revenues = sum_values_in_file("./data/planned_revenues.csv")
         except FileNotFoundError:
             raise FinancesManagerException("Error: arquivo não encontrado!")
     
